@@ -37,6 +37,11 @@
       margin: 0 0 0.5rem;
       color: var(--accent);
     }
+    .emoji {
+      font-size: clamp(4rem, 15vw, 7rem);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
     p {
       max-width: 40rem;
       color: var(--muted);
@@ -46,6 +51,7 @@
 </head>
 <body>
   <main>
+    <div class="emoji" role="img" aria-label="Chat">🐱</div>
     <h1>Claude Prime</h1>
     <p>Bienvenue sur la page d'accueil du projet.</p>
   </main>
