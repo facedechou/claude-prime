@@ -10,12 +10,14 @@
       --text: #1f1f1f;
       --muted: #666;
       --accent: #c96442;
+      --link: #9c3b1f;
     }
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: #1a1a1a;
         --text: #f0f0f0;
         --muted: #aaa;
+        --link: #f2a283;
       }
     }
     * { box-sizing: border-box; }
@@ -42,6 +44,7 @@
       line-height: 1;
       margin-bottom: 1rem;
     }
+    a { color: var(--link); }
     p {
       max-width: 40rem;
       color: var(--muted);
@@ -54,6 +57,7 @@
     <div class="emoji" role="img" aria-label="Chat">🐱</div>
     <h1>Claude Prime</h1>
     <p>Bienvenue sur la page d'accueil du projet.</p>
+    <p><a href="outils.html">Découvrir les meilleurs outils de vibe coding</a></p>
   </main>
 </body>
 </html>
