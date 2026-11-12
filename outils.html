@@ -10,7 +10,7 @@
     .tools { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; gap: 0.75rem; }
     .tools li { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; }
     .tools p { margin: 0.25rem 0 0; }
-    .tools .name { margin: 0; }
+    .tools .name { margin: 0; font-size: 1rem; }
     .type { font-size: 0.875rem; color: var(--muted); }
     .url { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.9rem; }
   </style>
@@ -31,7 +31,7 @@
   <main id="contenu">
     <div class="emoji" role="img" aria-label="Chat">🐱</div>
     <h1 class="centered">Les meilleurs outils de vibe coding</h1>
-    <p>Pendant des années, les chats ont marché sur les claviers pour écrire du code. Résultat : « jjjjjjjjjjjjjjjj;;;;;; », et beaucoup de projets jamais terminés.</p>
+    <p>Pendant des années, les chats ont marché sur les claviers pour écrire du code. Résultat : « <span role="img" aria-label="une suite de j et de points-virgules">jjjjjjjjjjjjjjjj;;;;;;</span> », et beaucoup de projets jamais terminés.</p>
     <p>Bonne nouvelle : avec le vibe coding, on décrit ce qu'on veut à une IA, en français, et elle écrit le code à notre place. Plus besoin de pattes agiles, juste de bonnes idées (et d'une sieste de temps en temps).</p>
     <p>Voici les outils préférés de la maison, classés par usage. Liste mise à jour en octobre 2026.</p>
     <nav aria-label="Sommaire">
@@ -53,42 +53,42 @@
       <p class="muted">Des agents qui comprennent votre projet, écrivent le code et le corrigent.</p>
       <ul class="tools">
         <li>
-          <p class="name"><strong>Claude Code</strong> <span class="type">(terminal, web)</span></p>
+          <h3 class="name">Claude Code <span class="type">(terminal, web)</span></h3>
           <p>Agent de code d&#x27;Anthropic : il lit le projet, modifie les fichiers et lance les commandes.</p>
           <p class="url"><a href="https://code.claude.com/docs/en/overview">code.claude.com/docs/en/overview</a></p>
         </li>
         <li>
-          <p class="name"><strong>Cursor</strong> <span class="type">(éditeur)</span></p>
+          <h3 class="name">Cursor <span class="type">(éditeur)</span></h3>
           <p>Éditeur de code avec agent intégré pour écrire, déboguer et relire.</p>
           <p class="url"><a href="https://www.cursor.com/">cursor.com</a></p>
         </li>
         <li>
-          <p class="name"><strong>GitHub Copilot</strong> <span class="type">(éditeur, GitHub)</span></p>
+          <h3 class="name">GitHub Copilot <span class="type">(éditeur, GitHub)</span></h3>
           <p>Assistance et agents directement dans GitHub et les principaux éditeurs.</p>
           <p class="url"><a href="https://github.com/features/copilot">github.com/features/copilot</a></p>
         </li>
         <li>
-          <p class="name"><strong>OpenAI Codex CLI</strong> <span class="type">(terminal)</span></p>
+          <h3 class="name">OpenAI Codex CLI <span class="type">(terminal)</span></h3>
           <p>L&#x27;agent de code d&#x27;OpenAI, exécuté en local dans le terminal.</p>
           <p class="url"><a href="https://openai.com/codex/">openai.com/codex</a></p>
         </li>
         <li>
-          <p class="name"><strong>Gemini CLI</strong> <span class="type">(terminal, open source)</span></p>
+          <h3 class="name">Gemini CLI <span class="type">(terminal, open source)</span></h3>
           <p>Agent de Google pour le terminal. Nécessite désormais une clé d&#x27;API ou un accès Vertex.</p>
           <p class="url"><a href="https://github.com/google-gemini/gemini-cli">github.com/google-gemini/gemini-cli</a></p>
         </li>
         <li>
-          <p class="name"><strong>Kiro</strong> <span class="type">(éditeur)</span></p>
+          <h3 class="name">Kiro <span class="type">(éditeur)</span></h3>
           <p>Agent d&#x27;AWS orienté spécifications et tests.</p>
           <p class="url"><a href="https://kiro.dev/">kiro.dev</a></p>
         </li>
         <li>
-          <p class="name"><strong>Cline</strong> <span class="type">(éditeur, open source)</span></p>
+          <h3 class="name">Cline <span class="type">(éditeur, open source)</span></h3>
           <p>Agent pour l&#x27;éditeur et le terminal, avec accès aux fichiers, aux commandes et au navigateur.</p>
           <p class="url"><a href="https://github.com/cline/cline">github.com/cline/cline</a></p>
         </li>
         <li>
-          <p class="name"><strong>Aider</strong> <span class="type">(terminal, open source)</span></p>
+          <h3 class="name">Aider <span class="type">(terminal, open source)</span></h3>
           <p>Programmation en binôme dans le terminal, compatible avec les modèles locaux, chaque modification enregistrée dans Git.</p>
           <p class="url"><a href="https://github.com/Aider-AI/aider">github.com/Aider-AI/aider</a></p>
         </li>
@@ -99,32 +99,32 @@
       <p class="muted">Décrivez votre idée, obtenez une application qui fonctionne. Idéal pour débuter.</p>
       <ul class="tools">
         <li>
-          <p class="name"><strong>Lovable</strong> <span class="type">(web)</span></p>
+          <h3 class="name">Lovable <span class="type">(web)</span></h3>
           <p>Génère des applications complètes, base de données Supabase comprise.</p>
           <p class="url"><a href="https://lovable.dev/">lovable.dev</a></p>
         </li>
         <li>
-          <p class="name"><strong>Bolt.new</strong> <span class="type">(web)</span></p>
+          <h3 class="name">Bolt.new <span class="type">(web)</span></h3>
           <p>Crée une application à partir d&#x27;une simple description, dans le navigateur.</p>
           <p class="url"><a href="https://bolt.new/">bolt.new</a></p>
         </li>
         <li>
-          <p class="name"><strong>v0</strong> <span class="type">(web)</span></p>
+          <h3 class="name">v0 <span class="type">(web)</span></h3>
           <p>L&#x27;outil de Vercel pour générer des interfaces React.</p>
           <p class="url"><a href="https://v0.app/">v0.app</a></p>
         </li>
         <li>
-          <p class="name"><strong>Replit</strong> <span class="type">(web)</span></p>
+          <h3 class="name">Replit <span class="type">(web)</span></h3>
           <p>Construire, tester et héberger une application avec Replit Agent.</p>
           <p class="url"><a href="https://replit.com/">replit.com</a></p>
         </li>
         <li>
-          <p class="name"><strong>Onlook</strong> <span class="type">(web)</span></p>
+          <h3 class="name">Onlook <span class="type">(web)</span></h3>
           <p>Modifier visuellement une interface tout en travaillant sur le code.</p>
           <p class="url"><a href="https://www.onlook.com/">onlook.com</a></p>
         </li>
         <li>
-          <p class="name"><strong>Dyad</strong> <span class="type">(bureau, open source)</span></p>
+          <h3 class="name">Dyad <span class="type">(bureau, open source)</span></h3>
           <p>Construire des applications en local, avec le modèle d&#x27;IA de votre choix.</p>
           <p class="url"><a href="https://github.com/dyad-sh/dyad">github.com/dyad-sh/dyad</a></p>
         </li>
@@ -135,37 +135,37 @@
       <p class="muted">De beaux exemples à montrer à votre agent pour obtenir un résultat soigné.</p>
       <ul class="tools">
         <li>
-          <p class="name"><strong>Awwwards</strong></p>
+          <h3 class="name">Awwwards</h3>
           <p>Les sites primés pour leur design : la référence du web créatif.</p>
           <p class="url"><a href="https://www.awwwards.com/">awwwards.com</a></p>
         </li>
         <li>
-          <p class="name"><strong>Godly</strong></p>
+          <h3 class="name">Godly</h3>
           <p>Sites sélectionnés à la main pour la qualité de leur travail graphique.</p>
           <p class="url"><a href="https://godly.website/">godly.website</a></p>
         </li>
         <li>
-          <p class="name"><strong>Minimal Gallery</strong></p>
+          <h3 class="name">Minimal Gallery</h3>
           <p>Galerie de sites haut de gamme et épurés.</p>
           <p class="url"><a href="https://minimal.gallery/">minimal.gallery</a></p>
         </li>
         <li>
-          <p class="name"><strong>Mobbin</strong></p>
+          <h3 class="name">Mobbin</h3>
           <p>Parcours d&#x27;applications réelles, écran par écran.</p>
           <p class="url"><a href="https://mobbin.com/">mobbin.com</a></p>
         </li>
         <li>
-          <p class="name"><strong>Refero Styles</strong></p>
+          <h3 class="name">Refero Styles</h3>
           <p>Les styles de vrais sites (couleurs, typographie, espacements) livrés en fichiers DESIGN.md lisibles par votre agent.</p>
           <p class="url"><a href="https://styles.refero.design/">styles.refero.design</a></p>
         </li>
         <li>
-          <p class="name"><strong>Component Gallery</strong></p>
+          <h3 class="name">Component Gallery</h3>
           <p>Plus de 2 600 exemples montrant comment les grands design systems conçoivent un même composant.</p>
           <p class="url"><a href="https://component.gallery/">component.gallery</a></p>
         </li>
         <li>
-          <p class="name"><strong>Awesome DESIGN.md</strong></p>
+          <h3 class="name">Awesome DESIGN.md</h3>
           <p>Des design systems de marques connues, décrits en Markdown pour les agents.</p>
           <p class="url"><a href="https://github.com/VoltAgent/awesome-design-md">github.com/VoltAgent/awesome-design-md</a></p>
         </li>
@@ -176,37 +176,37 @@
       <p class="muted">Des briques à copier-coller pour ne pas repartir de zéro.</p>
       <ul class="tools">
         <li>
-          <p class="name"><strong>shadcn/ui</strong></p>
+          <h3 class="name">shadcn/ui</h3>
           <p>La référence pour des composants propres, accessibles et réutilisables.</p>
           <p class="url"><a href="https://ui.shadcn.com/">ui.shadcn.com</a></p>
         </li>
         <li>
-          <p class="name"><strong>Shadcnblocks</strong></p>
+          <h3 class="name">Shadcnblocks</h3>
           <p>Des sections de page complètes basées sur shadcn/ui, pas seulement des boutons.</p>
           <p class="url"><a href="https://www.shadcnblocks.com/">shadcnblocks.com</a></p>
         </li>
         <li>
-          <p class="name"><strong>21st.dev</strong></p>
+          <h3 class="name">21st.dev</h3>
           <p>Bibliothèque de composants qui se branche sur les agents via MCP.</p>
           <p class="url"><a href="https://21st.dev/">21st.dev</a></p>
         </li>
         <li>
-          <p class="name"><strong>Aceternity UI</strong></p>
+          <h3 class="name">Aceternity UI</h3>
           <p>Composants animés React et Tailwind aux effets spectaculaires.</p>
           <p class="url"><a href="https://ui.aceternity.com/">ui.aceternity.com</a></p>
         </li>
         <li>
-          <p class="name"><strong>Magic UI</strong></p>
+          <h3 class="name">Magic UI</h3>
           <p>Plus de 150 composants animés, gratuits et open source.</p>
           <p class="url"><a href="https://magicui.design/">magicui.design</a></p>
         </li>
         <li>
-          <p class="name"><strong>Uiverse</strong></p>
+          <h3 class="name">Uiverse</h3>
           <p>Éléments d&#x27;interface créés par la communauté, en CSS et Tailwind.</p>
           <p class="url"><a href="https://uiverse.io/">uiverse.io</a></p>
         </li>
         <li>
-          <p class="name"><strong>mapcn</strong></p>
+          <h3 class="name">mapcn</h3>
           <p>Composants de cartes gratuits pour shadcn/ui : marqueurs, itinéraires, info-bulles.</p>
           <p class="url"><a href="https://mapcn.dev/">mapcn.dev</a></p>
         </li>
@@ -217,27 +217,27 @@
       <p class="muted">Pour donner du mouvement et du relief, à utiliser avec modération.</p>
       <ul class="tools">
         <li>
-          <p class="name"><strong>React Bits</strong></p>
+          <h3 class="name">React Bits</h3>
           <p>Plus de 100 animations de textes, fonds et composants, très populaire et open source.</p>
           <p class="url"><a href="https://reactbits.dev/">reactbits.dev</a></p>
         </li>
         <li>
-          <p class="name"><strong>Motion Primitives</strong></p>
+          <h3 class="name">Motion Primitives</h3>
           <p>Animations et interactions prêtes à l&#x27;emploi pour React.</p>
           <p class="url"><a href="https://motion-primitives.com/">motion-primitives.com</a></p>
         </li>
         <li>
-          <p class="name"><strong>Anime.js</strong></p>
+          <h3 class="name">Anime.js</h3>
           <p>Bibliothèque JavaScript d&#x27;animation, légère et complète.</p>
           <p class="url"><a href="https://animejs.com/">animejs.com</a></p>
         </li>
         <li>
-          <p class="name"><strong>Shadertoy</strong></p>
+          <h3 class="name">Shadertoy</h3>
           <p>Des milliers de shaders à étudier et à réutiliser.</p>
           <p class="url"><a href="https://www.shadertoy.com/">shadertoy.com</a></p>
         </li>
         <li>
-          <p class="name"><strong>3dicons</strong></p>
+          <h3 class="name">3dicons</h3>
           <p>Bibliothèque libre d&#x27;icônes en 3D, utilisable gratuitement.</p>
           <p class="url"><a href="https://3dicons.co/">3dicons.co</a></p>
         </li>
@@ -248,27 +248,27 @@
       <p class="muted">Donner à l&#x27;agent la documentation, les règles et l&#x27;accès aux données du projet. MCP est le protocole standard qui relie les agents à des outils.</p>
       <ul class="tools">
         <li>
-          <p class="name"><strong>Context7</strong> <span class="type">(MCP)</span></p>
+          <h3 class="name">Context7 <span class="type">(MCP)</span></h3>
           <p>Fournit à l&#x27;agent la documentation à jour des bibliothèques utilisées.</p>
           <p class="url"><a href="https://github.com/upstash/context7">github.com/upstash/context7</a></p>
         </li>
         <li>
-          <p class="name"><strong>GitHub MCP</strong> <span class="type">(MCP)</span></p>
+          <h3 class="name">GitHub MCP <span class="type">(MCP)</span></h3>
           <p>Connecte l&#x27;agent aux dépôts, tickets et pull requests.</p>
           <p class="url"><a href="https://github.com/github/github-mcp-server">github.com/github/github-mcp-server</a></p>
         </li>
         <li>
-          <p class="name"><strong>Supabase MCP</strong> <span class="type">(MCP)</span></p>
+          <h3 class="name">Supabase MCP <span class="type">(MCP)</span></h3>
           <p>Gérer schémas, requêtes et configuration Supabase depuis l&#x27;agent.</p>
           <p class="url"><a href="https://github.com/supabase/mcp">github.com/supabase/mcp</a></p>
         </li>
         <li>
-          <p class="name"><strong>Notion MCP</strong> <span class="type">(MCP)</span></p>
+          <h3 class="name">Notion MCP <span class="type">(MCP)</span></h3>
           <p>Chercher, lire et mettre à jour vos pages Notion.</p>
           <p class="url"><a href="https://developers.notion.com/guides/mcp/overview">developers.notion.com/guides/mcp/overview</a></p>
         </li>
         <li>
-          <p class="name"><strong>OpenSpec</strong></p>
+          <h3 class="name">OpenSpec</h3>
           <p>Écrire des spécifications avant de coder, pour garder l&#x27;agent sur les rails.</p>
           <p class="url"><a href="https://github.com/Fission-AI/OpenSpec">github.com/Fission-AI/OpenSpec</a></p>
         </li>
@@ -279,27 +279,27 @@
       <p class="muted">Le code généré doit être vérifié avant d&#x27;être partagé.</p>
       <ul class="tools">
         <li>
-          <p class="name"><strong>Playwright MCP</strong> <span class="type">(MCP)</span></p>
+          <h3 class="name">Playwright MCP <span class="type">(MCP)</span></h3>
           <p>L&#x27;agent pilote un vrai navigateur pour tester votre site.</p>
           <p class="url"><a href="https://github.com/microsoft/playwright-mcp">github.com/microsoft/playwright-mcp</a></p>
         </li>
         <li>
-          <p class="name"><strong>Semgrep</strong> <span class="type">(MCP)</span></p>
+          <h3 class="name">Semgrep <span class="type">(MCP)</span></h3>
           <p>Analyse de sécurité du code, utilisable par l&#x27;agent.</p>
           <p class="url"><a href="https://github.com/semgrep/semgrep">github.com/semgrep/semgrep</a></p>
         </li>
         <li>
-          <p class="name"><strong>Prbl</strong> <span class="type">(web)</span></p>
+          <h3 class="name">Prbl <span class="type">(web)</span></h3>
           <p>Détecte les failles fréquentes dans le code écrit par une IA.</p>
           <p class="url"><a href="https://getprbl.com/">getprbl.com</a></p>
         </li>
         <li>
-          <p class="name"><strong>Qodo</strong></p>
+          <h3 class="name">Qodo</h3>
           <p>Relecture de code automatisée par IA.</p>
           <p class="url"><a href="https://www.qodo.ai/">qodo.ai</a></p>
         </li>
         <li>
-          <p class="name"><strong>Sentry</strong> <span class="type">(MCP)</span></p>
+          <h3 class="name">Sentry <span class="type">(MCP)</span></h3>
           <p>Suivre les erreurs de l&#x27;application en production et en trouver la cause.</p>
           <p class="url"><a href="https://github.com/getsentry/sentry-mcp">github.com/getsentry/sentry-mcp</a></p>
         </li>
@@ -310,22 +310,22 @@
       <p class="muted">Mettre le projet en ligne ou le faire tourner dans un environnement isolé.</p>
       <ul class="tools">
         <li>
-          <p class="name"><strong>GitHub Pages</strong></p>
+          <h3 class="name">GitHub Pages</h3>
           <p>Héberge gratuitement un site statique depuis un dépôt GitHub. C&#x27;est ce qui publie cette page !</p>
           <p class="url"><a href="https://pages.github.com/">pages.github.com</a></p>
         </li>
         <li>
-          <p class="name"><strong>Cloudflare</strong> <span class="type">(MCP)</span></p>
+          <h3 class="name">Cloudflare <span class="type">(MCP)</span></h3>
           <p>Déployer et gérer ses ressources Cloudflare depuis l&#x27;agent.</p>
           <p class="url"><a href="https://github.com/cloudflare/mcp-server-cloudflare">github.com/cloudflare/mcp-server-cloudflare</a></p>
         </li>
         <li>
-          <p class="name"><strong>Publish.my</strong> <span class="type">(web)</span></p>
+          <h3 class="name">Publish.my <span class="type">(web)</span></h3>
           <p>Publier un site statique directement depuis un agent.</p>
           <p class="url"><a href="https://publish.my/">publish.my</a></p>
         </li>
         <li>
-          <p class="name"><strong>E2B</strong></p>
+          <h3 class="name">E2B</h3>
           <p>Bacs à sable sécurisés dans le cloud pour exécuter le code des agents.</p>
           <p class="url"><a href="https://github.com/e2b-dev/E2B">github.com/e2b-dev/E2B</a></p>
         </li>
@@ -336,22 +336,22 @@
       <p class="muted">Des guides pour travailler avec méthode. Ils sont en anglais.</p>
       <ul class="tools">
         <li>
-          <p class="name"><strong>Here&#x27;s how I use LLMs to help me write code</strong> <span class="type">(Simon Willison)</span></p>
+          <h3 class="name"><span lang="en">Here&#x27;s how I use LLMs to help me write code</span> <span class="type">(Simon Willison)</span></h3>
           <p>Une méthode itérative et pragmatique pour coder avec une IA.</p>
           <p class="url"><a href="https://simonwillison.net/2025/Mar/11/using-llms-for-code/" hreflang="en">simonwillison.net/2025/Mar/11/using-llms-for-code</a></p>
         </li>
         <li>
-          <p class="name"><strong>Agentic Coding Recommendations</strong> <span class="type">(Armin Ronacher)</span></p>
+          <h3 class="name"><span lang="en">Agentic Coding Recommendations</span> <span class="type">(Armin Ronacher)</span></h3>
           <p>Conseils concrets pour travailler avec des agents et tester leur travail.</p>
           <p class="url"><a href="https://lucumr.pocoo.org/2025/6/12/agentic-coding/" hreflang="en">lucumr.pocoo.org/2025/6/12/agentic-coding</a></p>
         </li>
         <li>
-          <p class="name"><strong>Secure Vibe Coding Guide</strong> <span class="type">(Cloud Security Alliance)</span></p>
+          <h3 class="name"><span lang="en">Secure Vibe Coding Guide</span> <span class="type">(Cloud Security Alliance)</span></h3>
           <p>Liste de vérifications de sécurité : secrets, autorisations, validation.</p>
           <p class="url"><a href="https://cloudsecurityalliance.org/blog/2025/04/09/secure-vibe-coding-guide" hreflang="en">cloudsecurityalliance.org/blog/2025/04/09/secure-vibe-coding-guide</a></p>
         </li>
         <li>
-          <p class="name"><strong>Vibe Coding with Confidence</strong> <span class="type">(Mahmoud Zalt)</span></p>
+          <h3 class="name"><span lang="en">Vibe Coding with Confidence</span> <span class="type">(Mahmoud Zalt)</span></h3>
           <p>Un manuel progressif dont les premiers chapitres sont gratuits.</p>
           <p class="url"><a href="https://zalt.me/guides/vibe-coding" hreflang="en">zalt.me/guides/vibe-coding</a></p>
         </li>
@@ -370,11 +370,14 @@
         <li><a href="contact.html">Contact</a></li>
         <li><a href="aide.html">Aide</a></li>
         <li><a href="info-site.html">Info site</a></li>
+        <li><a href="plan-du-site.html">Plan du site</a></li>
         <li><a href="accessibilite.html">Accessibilité : non conforme</a></li>
         <li><a href="donnees-personnelles.html">Cookies / Données personnelles</a></li>
         <li><a href="mentions-legales.html">Mentions légales</a></li>
       </ul>
     </nav>
+    <p class="footer-meta"><a href="https://github.com/facedechou/claude-prime"><svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 16 16" width="20" height="20"><path fill="currentColor" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>Code source sur GitHub</a></p>
+    <p class="footer-meta">© 2026 Compagnie Isabelle SERVAIS. Tous droits réservés.</p>
   </footer>
 </body>
 </html>
