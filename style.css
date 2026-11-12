@@ -94,6 +94,7 @@ h2 {
 dl { margin: 0; }
 dt { font-weight: 700; margin-top: 1rem; }
 dd { margin: 0; }
+dd p { margin: 0 0 0.5rem; }
 .site-footer {
   margin-top: 3rem;
   padding-top: 1rem;
