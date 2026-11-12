@@ -4,130 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Les meilleurs outils de vibe coding – Claude Prime</title>
-  <meta name="description" content="Sélection commentée des meilleurs outils de vibe coding : assistants de code, prototypage d'applications, inspiration design, composants UI, tests et déploiement.">
+  <meta name="description" content="Sélection commentée des meilleurs outils de vibe coding : assistants de code, prototypage d&#x27;applications, inspiration design, composants UI, tests et déploiement.">
+  <link rel="stylesheet" href="style.css">
   <style>
-    :root {
-      --bg: #f7f7f5;
-      --surface: #ffffff;
-      --text: #1f1f1f;
-      --muted: #4a4a4a;
-      --accent: #c96442;
-      --link: #9c3b1f;
-      --border: #d6d6d0;
-      --focus: #1a56db;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #1a1a1a;
-        --surface: #242424;
-        --text: #f0f0f0;
-        --muted: #c4c4c4;
-        --link: #f2a283;
-        --border: #3d3d3d;
-        --focus: #8ab4ff;
-      }
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-    }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      font-size: 1rem;
-      line-height: 1.6;
-      background: var(--bg);
-      color: var(--text);
-    }
-    .skip-link {
-      position: absolute;
-      left: -9999px;
-      top: 0;
-      padding: 0.5rem 1rem;
-      background: var(--surface);
-      color: var(--text);
-    }
-    .skip-link:focus { left: 1rem; top: 1rem; }
-    header, main, footer {
-      max-width: 48rem;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-    header { padding-top: 2rem; }
-    .emoji {
-      font-size: clamp(4rem, 15vw, 7rem);
-      line-height: 1;
-      margin: 1rem 0 0;
-      text-align: center;
-    }
-    h1 {
-      font-size: clamp(1.75rem, 5vw, 2.5rem);
-      line-height: 1.2;
-      margin: 1rem 0;
-      text-align: center;
-    }
-    h2 {
-      font-size: 1.4rem;
-      margin: 2.5rem 0 0.25rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border);
-    }
-    h2 + p { margin-top: 0; color: var(--muted); }
-    a { color: var(--link); text-underline-offset: 0.15em; overflow-wrap: anywhere; }
-    a:hover { text-decoration-thickness: 2px; }
-    a:focus-visible, .skip-link:focus {
-      outline: 3px solid var(--focus);
-      outline-offset: 2px;
-    }
-    .intro p { margin: 0 0 0.75rem; }
-    nav ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem 1.25rem;
-      padding: 0;
-      list-style: none;
-    }
-    .tools {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0 0;
-      display: grid;
-      gap: 0.75rem;
-    }
-    .tools li {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 0.75rem 1rem;
-    }
+    .tools { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; gap: 0.75rem; }
+    .tools li { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; }
     .tools p { margin: 0.25rem 0 0; }
     .tools .name { margin: 0; }
-    .type {
-      font-size: 0.875rem;
-      color: var(--muted);
-    }
+    .type { font-size: 0.875rem; color: var(--muted); }
     .url { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.9rem; }
-    footer {
-      margin-top: 3rem;
-      padding-bottom: 2rem;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-    }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-  <header>
-    <p><a href="index.html">← Retour à l'accueil</a></p>
+  <header class="site-header">
+    <p class="site-name"><a href="index.html">Claude Prime</a></p>
+    <nav aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="outils.html" aria-current="page">Outils de vibe coding</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenu">
     <div class="emoji" role="img" aria-label="Chat">🐱</div>
-    <h1>Les meilleurs outils de vibe coding</h1>
-    <div class="intro">
-      <p>Pendant des années, les chats ont marché sur les claviers pour écrire du code. Résultat : « jjjjjjjjjjjjjjjj;;;;;; », et beaucoup de projets jamais terminés.</p>
-      <p>Bonne nouvelle : avec le vibe coding, on décrit ce qu'on veut à une IA, en français, et elle écrit le code à notre place. Plus besoin de pattes agiles, juste de bonnes idées (et d'une sieste de temps en temps).</p>
-      <p>Voici les outils préférés de la maison, classés par usage. Liste mise à jour en octobre 2026.</p>
-    </div>
+    <h1 class="centered">Les meilleurs outils de vibe coding</h1>
+    <p>Pendant des années, les chats ont marché sur les claviers pour écrire du code. Résultat : « jjjjjjjjjjjjjjjj;;;;;; », et beaucoup de projets jamais terminés.</p>
+    <p>Bonne nouvelle : avec le vibe coding, on décrit ce qu'on veut à une IA, en français, et elle écrit le code à notre place. Plus besoin de pattes agiles, juste de bonnes idées (et d'une sieste de temps en temps).</p>
+    <p>Voici les outils préférés de la maison, classés par usage. Liste mise à jour en octobre 2026.</p>
     <nav aria-label="Sommaire">
       <ul>
         <li><a href="#code">Coder avec une IA</a></li>
@@ -141,12 +47,10 @@
         <li><a href="#apprendre">Apprendre et progresser</a></li>
       </ul>
     </nav>
-  </header>
 
-  <main id="contenu">
     <section aria-labelledby="code">
       <h2 id="code"><span aria-hidden="true">🤖 </span>Coder avec une IA</h2>
-      <p>Des agents qui comprennent votre projet, écrivent le code et le corrigent.</p>
+      <p class="muted">Des agents qui comprennent votre projet, écrivent le code et le corrigent.</p>
       <ul class="tools">
         <li>
           <p class="name"><strong>Claude Code</strong> <span class="type">(terminal, web)</span></p>
@@ -190,10 +94,9 @@
         </li>
       </ul>
     </section>
-
     <section aria-labelledby="prototypage">
       <h2 id="prototypage"><span aria-hidden="true">🚀 </span>Prototyper une application</h2>
-      <p>Décrivez votre idée, obtenez une application qui fonctionne. Idéal pour débuter.</p>
+      <p class="muted">Décrivez votre idée, obtenez une application qui fonctionne. Idéal pour débuter.</p>
       <ul class="tools">
         <li>
           <p class="name"><strong>Lovable</strong> <span class="type">(web)</span></p>
@@ -227,10 +130,9 @@
         </li>
       </ul>
     </section>
-
     <section aria-labelledby="inspiration">
       <h2 id="inspiration"><span aria-hidden="true">🎨 </span>Trouver l&#x27;inspiration design</h2>
-      <p>De beaux exemples à montrer à votre agent pour obtenir un résultat soigné.</p>
+      <p class="muted">De beaux exemples à montrer à votre agent pour obtenir un résultat soigné.</p>
       <ul class="tools">
         <li>
           <p class="name"><strong>Awwwards</strong></p>
@@ -269,10 +171,9 @@
         </li>
       </ul>
     </section>
-
     <section aria-labelledby="composants">
       <h2 id="composants"><span aria-hidden="true">🧩 </span>Composants d&#x27;interface prêts à l&#x27;emploi</h2>
-      <p>Des briques à copier-coller pour ne pas repartir de zéro.</p>
+      <p class="muted">Des briques à copier-coller pour ne pas repartir de zéro.</p>
       <ul class="tools">
         <li>
           <p class="name"><strong>shadcn/ui</strong></p>
@@ -311,10 +212,9 @@
         </li>
       </ul>
     </section>
-
     <section aria-labelledby="animations">
       <h2 id="animations"><span aria-hidden="true">✨ </span>Animations, 3D et effets visuels</h2>
-      <p>Pour donner du mouvement et du relief, à utiliser avec modération.</p>
+      <p class="muted">Pour donner du mouvement et du relief, à utiliser avec modération.</p>
       <ul class="tools">
         <li>
           <p class="name"><strong>React Bits</strong></p>
@@ -343,10 +243,9 @@
         </li>
       </ul>
     </section>
-
     <section aria-labelledby="contexte">
       <h2 id="contexte"><span aria-hidden="true">🔌 </span>Contexte et intégrations</h2>
-      <p>Donner à l&#x27;agent la documentation, les règles et l&#x27;accès aux données du projet. MCP est le protocole standard qui relie les agents à des outils.</p>
+      <p class="muted">Donner à l&#x27;agent la documentation, les règles et l&#x27;accès aux données du projet. MCP est le protocole standard qui relie les agents à des outils.</p>
       <ul class="tools">
         <li>
           <p class="name"><strong>Context7</strong> <span class="type">(MCP)</span></p>
@@ -375,10 +274,9 @@
         </li>
       </ul>
     </section>
-
     <section aria-labelledby="qualite">
       <h2 id="qualite"><span aria-hidden="true">🛡️ </span>Tests, relecture et sécurité</h2>
-      <p>Le code généré doit être vérifié avant d&#x27;être partagé.</p>
+      <p class="muted">Le code généré doit être vérifié avant d&#x27;être partagé.</p>
       <ul class="tools">
         <li>
           <p class="name"><strong>Playwright MCP</strong> <span class="type">(MCP)</span></p>
@@ -407,10 +305,9 @@
         </li>
       </ul>
     </section>
-
     <section aria-labelledby="deploiement">
       <h2 id="deploiement"><span aria-hidden="true">🌍 </span>Déployer et exécuter</h2>
-      <p>Mettre le projet en ligne ou le faire tourner dans un environnement isolé.</p>
+      <p class="muted">Mettre le projet en ligne ou le faire tourner dans un environnement isolé.</p>
       <ul class="tools">
         <li>
           <p class="name"><strong>GitHub Pages</strong></p>
@@ -434,10 +331,9 @@
         </li>
       </ul>
     </section>
-
     <section aria-labelledby="apprendre">
       <h2 id="apprendre"><span aria-hidden="true">📚 </span>Apprendre et progresser</h2>
-      <p>Des guides pour travailler avec méthode. Ils sont en anglais.</p>
+      <p class="muted">Des guides pour travailler avec méthode. Ils sont en anglais.</p>
       <ul class="tools">
         <li>
           <p class="name"><strong>Here&#x27;s how I use LLMs to help me write code</strong> <span class="type">(Simon Willison)</span></p>
@@ -461,11 +357,25 @@
         </li>
       </ul>
     </section>
+
+    <section aria-labelledby="sources">
+      <h2 id="sources">Sources</h2>
+      <p>Sélection établie à partir de la liste <a href="https://github.com/Scap-Mehdi/awesome-vibecoding" hreflang="en">github.com/Scap-Mehdi/awesome-vibecoding</a> et d'une publication partagée sur X. Les tarifs et conditions d'accès évoluent : vérifiez-les sur le site de chaque outil.</p>
+    </section>
   </main>
 
-  <footer>
-    <h2>Sources</h2>
-    <p>Sélection établie à partir de la liste <a href="https://github.com/Scap-Mehdi/awesome-vibecoding" hreflang="en">github.com/Scap-Mehdi/awesome-vibecoding</a> et d'une publication partagée sur X. Les tarifs et conditions d'accès évoluent : vérifiez-les sur le site de chaque outil.</p>
+  <footer class="site-footer">
+    <nav aria-label="Pied de page">
+      <ul>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="aide.html">Aide</a></li>
+        <li><a href="info-site.html">Info site</a></li>
+        <li><a href="accessibilite.html">Accessibilité : non conforme</a></li>
+        <li><a href="https://claude-prime-2kr.pages.dev/">Site de Compagnie Isabelle SERVAIS</a></li>
+        <li><a href="donnees-personnelles.html">Cookies / Données personnelles</a></li>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+      </ul>
+    </nav>
   </footer>
 </body>
 </html>

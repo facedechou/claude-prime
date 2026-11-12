@@ -1,0 +1,103 @@
+:root {
+  --bg: #f7f7f5;
+  --surface: #fff;
+  --text: #1f1f1f;
+  --muted: #4a4a4a;
+  --accent: #c96442;
+  --link: #9c3b1f;
+  --border: #d6d6d0;
+  --focus: #1a56db;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1a1a;
+    --surface: #242424;
+    --text: #f0f0f0;
+    --muted: #c4c4c4;
+    --link: #f2a283;
+    --border: #3d3d3d;
+    --focus: #8ab4ff;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+}
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 0.5rem 1rem;
+  background: var(--surface);
+  color: var(--text);
+}
+.skip-link:focus { left: 1rem; top: 1rem; }
+.site-header, main, .site-footer {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.site-name { font-weight: 700; }
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a { color: var(--link); text-underline-offset: 0.15em; overflow-wrap: anywhere; }
+a:hover { text-decoration-thickness: 2px; }
+a[aria-current="page"] { font-weight: 700; text-decoration: none; }
+a:focus-visible, .skip-link:focus {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+h1 {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  line-height: 1.2;
+  margin: 2rem 0 1rem;
+}
+h2 {
+  font-size: 1.4rem;
+  margin: 2.5rem 0 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.muted { color: var(--muted); }
+.emoji {
+  font-size: clamp(4rem, 15vw, 7rem);
+  line-height: 1;
+  margin: 2rem 0 0;
+  text-align: center;
+}
+.centered { text-align: center; }
+.centered h1 { color: var(--accent); }
+dl { margin: 0; }
+dt { font-weight: 700; margin-top: 1rem; }
+dd { margin: 0; }
+.site-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.95rem;
+}
