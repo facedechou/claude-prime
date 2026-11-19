@@ -10,9 +10,8 @@
     {
       "binding": "DB",
       "database_name": "projet-db",
-      // Identifiant de la base (pas un secret) : à remplacer par celui
-      // affiché par « wrangler d1 create projet-db ».
-      "database_id": "00000000-0000-0000-0000-000000000000",
+      // Identifiant de la base (pas un secret)
+      "database_id": "4b44b4f0-6aeb-4127-92e3-2a2aee79940f",
       "migrations_dir": "migrations"
     }
   ],
