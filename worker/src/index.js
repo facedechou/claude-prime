@@ -1,6 +1,7 @@
 // API des commentaires des outils (Cloudflare Worker + D1).
 //   GET  /api/outils/{outilId}/commentaires[?avant=curseur]  20 derniers, paginés
 //   POST /api/outils/{outilId}/commentaires                  { "texte": "...", "auteur": "..." }
+//   GET  /api/commentaires/compteurs                         nombre de commentaires par outil
 // Toutes les requêtes SQL passent par prepare().bind().
 
 const PAR_PAGE = 20;
@@ -19,7 +20,17 @@ export default {
       return new Response(null, { status: 204, headers: cors });
     }
 
-    const route = new URL(request.url).pathname.match(ROUTE);
+    const chemin = new URL(request.url).pathname;
+    if (chemin === "/api/commentaires/compteurs" && request.method === "GET") {
+      try {
+        return await compter(env, cors);
+      } catch (e) {
+        console.error(e);
+        return json({ erreur: "Erreur du serveur." }, 500, cors);
+      }
+    }
+
+    const route = chemin.match(ROUTE);
     if (!route) return json({ erreur: "Adresse inconnue." }, 404, cors);
     const outilId = route[1];
 
@@ -65,6 +76,17 @@ async function lister(request, env, outilId, cors) {
       commentaires: page.map(formater),
       suivant: results.length > PAR_PAGE ? `${dernier.cree_le}_${dernier.id}` : null,
     },
+    200,
+    { ...cors, "Cache-Control": "public, max-age=30" }
+  );
+}
+
+async function compter(env, cors) {
+  const { results } = await env.DB.prepare(
+    "SELECT outil_id, COUNT(*) AS nombre FROM commentaires GROUP BY outil_id"
+  ).all();
+  return json(
+    Object.fromEntries(results.map((l) => [l.outil_id, l.nombre])),
     200,
     { ...cors, "Cache-Control": "public, max-age=30" }
   );

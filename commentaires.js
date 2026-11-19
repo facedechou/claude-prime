@@ -3,6 +3,8 @@
   const api = document.querySelector('meta[name="api-commentaires"]')?.content;
   if (!api) return;
   const dateFr = new Intl.DateTimeFormat("fr-FR", { dateStyle: "long", timeStyle: "short" });
+  const libelle = (n) => (n === 0 ? "Aucun commentaire" : n === 1 ? "1 commentaire" : `${n} commentaires`);
+  const compteurs = new Map();
 
   for (const outil of document.querySelectorAll("[data-outil]")) {
     const id = outil.dataset.outil;
@@ -12,7 +14,7 @@
     const bloc = document.createElement("details");
     bloc.className = "commentaires";
     bloc.innerHTML = `
-      <summary>Commentaires<span class="visually-hidden"></span></summary>
+      <summary><span class="compteur">Commentaires</span><span class="visually-hidden"></span></summary>
       <p class="statut" role="status"></p>
       <ol class="liste"></ol>
       <button type="button" class="plus" hidden>Afficher des commentaires plus anciens</button>
@@ -26,6 +28,8 @@
       </form>`;
     bloc.querySelector(".visually-hidden").textContent = ` sur ${nom}`;
     outil.append(bloc);
+    const compteur = { n: null, el: bloc.querySelector(".compteur") };
+    compteurs.set(id, compteur);
 
     const statut = bloc.querySelector(".statut");
     const liste = bloc.querySelector(".liste");
@@ -80,6 +84,7 @@
         const donnees = await rep.json().catch(() => ({}));
         if (!rep.ok) throw { erreurApi: donnees.erreur };
         liste.prepend(element(donnees));
+        if (compteur.n !== null) compteur.el.textContent = libelle(++compteur.n);
         form.texte.value = "";
         statut.textContent = "Commentaire publié.";
       } catch (err) {
@@ -89,4 +94,15 @@
       }
     });
   }
+
+  // Nombre de commentaires de chaque outil, en un seul appel
+  fetch(`${api}/api/commentaires/compteurs`)
+    .then((rep) => (rep.ok ? rep.json() : Promise.reject()))
+    .then((nombres) => {
+      for (const [id, c] of compteurs) {
+        c.n = nombres[id] || 0;
+        c.el.textContent = libelle(c.n);
+      }
+    })
+    .catch(() => {});
 })();
