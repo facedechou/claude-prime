@@ -1,0 +1,58 @@
+name: Déployer l'API des commentaires
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "worker/**"
+      - ".github/workflows/deploy-worker.yml"
+  workflow_dispatch:
+
+concurrency: deploy-worker
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: worker
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Vérifier la configuration
+        id: config
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::warning::Secrets CLOUDFLARE_API_TOKEN et CLOUDFLARE_ACCOUNT_ID absents : déploiement ignoré."
+            echo "pret=false" >> "$GITHUB_OUTPUT"
+          elif grep -q '"database_id": "00000000-0000-0000-0000-000000000000"' wrangler.jsonc; then
+            echo "::warning::database_id de projet-db non renseigné dans worker/wrangler.jsonc : déploiement ignoré."
+            echo "pret=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "pret=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.config.outputs.pret == 'true'
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: worker/package-lock.json
+
+      - name: Installer wrangler
+        if: steps.config.outputs.pret == 'true'
+        run: npm ci
+
+      - name: Appliquer les migrations D1
+        if: steps.config.outputs.pret == 'true'
+        run: npx wrangler d1 migrations apply projet-db --remote
+
+      - name: Déployer le Worker
+        if: steps.config.outputs.pret == 'true'
+        run: npx wrangler deploy

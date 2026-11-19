@@ -1,0 +1,27 @@
+{
+  // API des commentaires de la page outils.html
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "claude-prime-commentaires",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": true,
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "projet-db",
+      // Identifiant de la base (pas un secret) : à remplacer par celui
+      // affiché par « wrangler d1 create projet-db ».
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations"
+    }
+  ],
+
+  // Purge quotidienne des commentaires de plus de 12 mois (03 h 17 UTC)
+  "triggers": { "crons": ["17 3 * * *"] },
+
+  "vars": {
+    "ORIGINES_AUTORISEES": "https://claude-prime-2kr.pages.dev,https://facedechou.github.io",
+    "DUREE_CONSERVATION_MOIS": "12"
+  }
+}
